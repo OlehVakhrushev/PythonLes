@@ -74,6 +74,20 @@ def is_palindrome(s):
     else:
         return False
 
+# Or like this, with int and number Palindrome
+#
+# A palindrome is a word, phrase, number, or other sequence
+# of characters which reads the same backward or forward.
+# This includes capital letters, punctuation, and word dividers.
+# Implement a function that checks if something is a palindrome.
+
+def is_palindrome(string):
+    string = str(string)
+    if string == string[::-1]:
+        return True
+    else:
+        return False
+
 
 # 4 Sum of elements divided per 3 and 5 between 1 and 100
 
