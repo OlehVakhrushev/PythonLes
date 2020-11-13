@@ -110,7 +110,7 @@
 # Andrew, your  name has 6 letters
 # Andrew,  your name starts with letter ”A”
 # Andrew< your name ends with letter ”w”
-
+#
 # name = input("What is your name? ")
 # print(f"{name}, your name has {len(name)} letters")
 # print(f"{name}, your name starts with letter '{name[0]}'")
