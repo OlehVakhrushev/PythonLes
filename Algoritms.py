@@ -561,3 +561,28 @@ def initials(phrase):
 print(initials("Universal Serial Bus")) # Should be: USB
 print(initials("local area network")) # Should be: LAN
 print(initials("Operating system")) # Should be: OS
+
+
+# Determine the total number of digits in the integer (n>=0) given as input to the function.
+# For example, 9 is a single digit, 66 has 2 digits and 128685
+# has 6 digits. Be careful to avoid overflows/underflows.
+#
+# All inputs will be valid.
+
+def digits(n):
+    res = list(map(int, str(n)))
+    return len(res)
+
+
+# Write a function to convert a name into initials. This kata strictly takes two words with one space in between them.
+# The output should be two capital letters with a dot separating them.
+# It should look like this:
+# Sam Harris => S.H
+# Patrick Feeney => P.F
+
+
+def abbrev_name(name):
+    firstLetter = name[0].upper()
+    secondIndex = name.find(' ') + 1
+    secondLetter = name[secondIndex].upper()
+    return name[0].upper() + '.' + secondLetter
