@@ -586,3 +586,129 @@ def abbrev_name(name):
     secondIndex = name.find(' ') + 1
     secondLetter = name[secondIndex].upper()
     return name[0].upper() + '.' + secondLetter
+
+
+# Greet Me
+# Write a method that takes one argument as name and then greets that name, capitalized and ends with an exclamation point.
+#
+# Example:
+#
+# "riley" --> "Hello Riley!"
+# "JACK"  --> "Hello Jack!"
+def greet(name):
+    if (name[0].islower):
+        return f"Hello {name.capitalize()}!"
+    else:
+        return f"Hello {name}!"
+
+# Given a non-negative integer, 3 for example, return a string with a murmur:
+#     "1 sheep...2 sheep...3 sheep...". Input will always be valid, i.e. no negative integers.
+def greet(name):
+    if (name[0].islower):
+        return f"Hello {name.capitalize()}!"
+    else:
+        return f"Hello {name}!"
+
+
+# Remove First and Last Character
+# It's pretty straightforward. Your goal is to create a function that ' \
+#   'removes the first and last characters of a string. ' \
+#   'You're given one parameter, the original string. You don't have to worry with strings with less than two characters.
+
+def remove_char(s):
+    a = s[1:len(s)-1]
+    return a
+
+# Reversed sequence
+# Get the number n (n>0) to return the reversed sequence from n to 1.
+#
+# Example : n=5 >> [5,4,3,2,1]
+
+def reverse_seq(n):
+    return [x for x in range(1,n+1)][::-1]
+
+
+# Given a mathematical equation that has *,+,-,/, reverse it as follows:
+#
+# solve("100*b/y") = "y/b*100"
+# solve("a+b-c/d*30") = "30*d/c-b+a"
+
+
+def solve(equation):
+    parts = []
+    operand = ""
+    for ch in equation:
+        if ch in ["+", "-", "*", "/"]:
+            parts.append(operand)
+            parts.append(ch)
+            operand = ""
+        else:
+            operand += ch
+    if operand:
+        parts.append(operand)
+
+    return "".join(parts[::-1])
+
+# Arithmetic sequence - sum of n elements
+# In your class, you have started lessons about "arithmetic progression".
+# Because you are also a programmer, you have decided to write a function.
+# This function, arithmetic_sequence_sum(a, r, n), should
+# return the sum of the first (n) elements of a sequence in which each element is the sum of the given
+# integer (a), and a number of occurences of the given integer (r), based on the element's position within the sequence.
+#
+# For example:
+#
+# arithmetic_sequence_sum(2, 3, 5) should return 40:
+#
+# 1     2        3          4            5
+# a + (a+r) + (a+r+r) + (a+r+r+r) + (a+r+r+r+r)
+# 2 + (2+3) + (2+3+3) + (2+3+3+3) + (2+3+3+3+3) = 40
+
+def arithmetic_sequence_sum(a, r, n):
+    return n * (a + a + (n -1)* r) / 2
+
+# ATM
+# There is enough money available on ATM in nominal value 10, 20, 50, 100, 200 and 500 dollars.
+# You are given money in nominal value of n with 1<=n<=1500.
+# Try to find minimal number of notes that must be used to repay in dollars, or output -1 if it is impossible.
+# Good Luck!!!
+
+def solve(n):
+    count = 0
+    while (n >= 500):
+        count += 1
+        n -= 500
+    while (n >= 200):
+        count += 1
+        n -= 200
+    while (n >= 100):
+        count += 1
+        n -= 100
+    while (n >= 50):
+        count += 1
+        n -= 50
+    while (n >= 20):
+        count += 1
+        n -= 20
+    while (n >= 10):
+        count += 1
+        n -= 10
+    if (n == 0):
+        return count
+    else:
+        return -1
+
+# Beginner
+# Series  # 3 Sum of Numbers
+#
+# Given two integers a and b, which can be positive or negative, find the sum of all
+# the integers between including them too and return it. If the two numbers are equal return a or b.
+# Note: a and b are not ordered!
+
+def get_sum(a,b):
+    if a == b:
+        return a
+    elif a<b:
+        return sum(range(a,b+1))
+    elif a>b:
+        return sum(range(b,a+1))
